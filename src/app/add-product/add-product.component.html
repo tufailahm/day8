@@ -1,0 +1,43 @@
+<h1>Add Product</h1>
+<div class="container">
+    <form novalidate [formGroup]="productForm" (ngSubmit)="saveProduct()">
+
+        <fieldset>
+            <!-- Product Id -->
+            <div class="form-group">
+                <label>Product Id</label>
+                <input type="text" class="form-control" formControlName="productId">
+            </div>
+
+            <!-- Product Name -->
+            <div class="form-group">
+                <label>Product Name</label>
+                <input type="text" class="form-control" formControlName="productName">
+    <div class="alert alert-danger"  *ngIf="productForm.get('productName').hasError('required') && productForm.get('productName').dirty">
+                        Product name is required
+                </div>
+                <div class="alert alert-danger"  *ngIf="productForm.get('productName').hasError('minlength') && productForm.get('productName').dirty">
+                    Product name must be of min 5 characters
+            </div>
+            </div>
+
+
+            <!-- Product Name -->
+            <div class="form-group">
+                <label>Quantity On Hand</label>
+                <input type="text" class="form-control" formControlName="quantityOnHand">
+            </div>
+
+
+            <!-- Product Name -->
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" class="form-control" formControlName="price">
+            </div>
+
+        </fieldset>
+
+        <button class="btn btn-primary">Save</button>
+    </form>
+
+</div>

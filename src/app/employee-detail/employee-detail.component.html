@@ -1,0 +1,34 @@
+<img [src]="imageURL">
+<br />
+<h1>Employee Name is : {{ employeeName }}</h1>
+Employee Name : <input type="text" [(ngModel)]="employeeName">
+<button class="btn btn-success" (click)="sayHello()">
+    Change Name</button>
+
+<HR color="red"/>
+<h1>Department names 
+
+    <br/>
+    <ul>
+        <li *ngFor="let dept of departments">
+            {{ dept}}
+        </li>
+    </ul>
+</h1>
+<HR />
+<h1 *ngIf="showCalculator">
+    Calculator<br/>
+Number 1: <input type="number" [(ngModel)]="num1"> <br/>
+Number 2: <input type="number" [(ngModel)]="num2"> <br/>
+<button class="btn btn-success" (click)="addNumbers()">Add</button>
+<br/>
+Sum of {{num1}} and {{num2}} is : {{ sum }}
+</h1>
+<button (click)="showHideCalculator()">{{ showCalculator ? 'Hide ': 'Show ' }} Calculator</button>
+
+<h1 *ngIf="showElement"> Today we are learning directives</h1>
+
+<br/>
+<br/>
+<br/>
+<br/>
